@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f90443031c74a14a92c654a42145a86, type: 3}
   m_Name: Skull Weapon Level 2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6651525307632057075, guid: 834cdb5e6266da140a7a764de10fcd11, type: 3}
+  prefab: {fileID: 6651525307632057075, guid: 0210d2bc7af94534ab615d57e0057c3f, type: 3}
   damage: 5
   speed: 15
   cooldownDuration: 3
   pierce: 1
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Skull Level 2
+  description: Projectile Speed is up by 5
   icon: {fileID: -2739807658926110822, guid: 46c0ede1eb850274980791914811585c, type: 3}

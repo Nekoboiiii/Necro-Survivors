@@ -15,4 +15,6 @@ MonoBehaviour:
   multipler: 20
   level: 2
   nextLevelPrefab: {fileID: 0}
+  name: Leg Level 2
+  description: Increaces Movement Speed by 20%
   icon: {fileID: 21300000, guid: e01a5db6191113041acda069fac47d67, type: 3}

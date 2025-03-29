@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
     {
         public string enemyName;
         public int enemyCount; // Number of enemies to spawn in this wave
-        public int SpawnCount; // The number of eneiems spawned in this wave
+        public int SpawnCount; // The number of enemies spawned in this wave
         public GameObject enemyPrefab;
     }
     
@@ -84,7 +84,6 @@ public class EnemySpawner : MonoBehaviour
         }
 
         waves[currentWaveCount].waveQuota = currentWaveQuota;
-        Debug.LogWarning(currentWaveQuota);
     }
 
     /// <summary>

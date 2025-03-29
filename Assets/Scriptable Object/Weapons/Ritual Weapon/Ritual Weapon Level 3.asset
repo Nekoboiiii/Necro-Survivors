@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f90443031c74a14a92c654a42145a86, type: 3}
-  m_Name: Ritual Weapon Level 2
+  m_Name: Ritual Weapon Level 3
   m_EditorClassIdentifier: 
   prefab: {fileID: 2243604368539106073, guid: deb5d336570f9b04087b089818904c23, type: 3}
   damage: 5
   speed: 0
-  cooldownDuration: 2.5
+  cooldownDuration: 2
   pierce: 0
   level: 2
   nextLevelPrefab: {fileID: 0}
-  name: Ritual Level 2
-  description: Cooldown reduced by 0.5s
+  name: Ritual Level 3
+  description: Cooldown reduced by 1.0s
   icon: {fileID: 2081294769, guid: 6f54a7fbd2c0f8b418b8d809440916b4, type: 3}

@@ -15,4 +15,6 @@ MonoBehaviour:
   multipler: 10
   level: 1
   nextLevelPrefab: {fileID: 6665535043360874166, guid: 92213aa88f0f1b24aaec1330c24ae584, type: 3}
+  name: Spirit
+  description: Increaces Might by 10
   icon: {fileID: 21300000, guid: d45cd5a74cdc0874cba0cfccb6becf8f, type: 3}

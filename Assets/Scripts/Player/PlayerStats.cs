@@ -12,7 +12,6 @@ public class PlayerStats : MonoBehaviour
     float currentMoveSpeed;
     float currentMight;
     float currentProjectileSpeed;
-  
     float currentMagnet;
 
     #region Current Stats
@@ -193,6 +192,8 @@ public class PlayerStats : MonoBehaviour
             GameManager.instance.currentMightDisplay.text = "Might: " + CurrentMight;
             GameManager.instance.currentProjectileSpeedDisplay.text = "Projectile Speed: " + CurrentProjectileSpeed;
             GameManager.instance.currentMagnetDisplay.text = "Magnet: " + CurrentMagnet;
+
+            GameManager.instance.AssignChosenCharacterUI(characterData);
     }
 
     void Update()
@@ -257,7 +258,13 @@ public class PlayerStats : MonoBehaviour
 
     public void Kill()
     {
-        Debug.Log("Player is Dead");
+       Debug.Log("Player is Dead");
+       if(!GameManager.instance.isGameOver)
+       {
+            GameManager.instance.AssignLevelReachedUI(level);
+            GameManager.instance.AssignChosenWeaponsAndPassivItemsUI(inventory.weaponUISlots, inventory.passivItemUISlots);
+            GameManager.instance.GameOver();
+       }
     }
 
     public void RestoreHealth(float amount)

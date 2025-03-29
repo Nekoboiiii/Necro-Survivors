@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77695474d877f74d956c29e1c13fbf1, type: 3}
   m_Name: Ritual Character
   m_EditorClassIdentifier: 
+  icon: {fileID: 2453471184611628814, guid: 9b2bbb63b76690444a02164f984581b3, type: 3}
+  name: Ritual Character
   startingWeapon: {fileID: 3189634322237945269, guid: 470c1b58768d55d4881f96596c249797, type: 3}
   maxHealth: 1000
   recovery: 1

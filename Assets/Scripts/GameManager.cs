@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,9 +20,12 @@ public class GameManager : MonoBehaviour
     // Store the previous state of the game
     public GameState prevouisState;
 
-    [Header("UI")]
+    [Header("Screens")]
     public GameObject pauseScreen;
+    public GameObject resultsScreen;
 
+
+     [Header("Current Stats Displays")]
     // Curremt stat displays
     public TextMeshProUGUI currentHealthDisplay;
     public TextMeshProUGUI currentRecoveryDisplay;
@@ -30,7 +34,19 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI currentProjectileSpeedDisplay;
     public TextMeshProUGUI currentMagnetDisplay;
 
-    // Flag to check if the game is over
+     [Header("Results Screen")]
+     public Image chosenCharacterImage; // Image of the chosen character
+    public TextMeshProUGUI chosenCharacterName; // Name of the chosen character
+    public TextMeshProUGUI levelReachedDisplay; // Level reached display
+    public List<Image> chosenWeaponsUI = new List<Image>(6); // List of Weapons UI
+    public List<Image> chosenPassivItemsUI = new List<Image>(6); // List of passive items UI 
+
+    [Header("Stopwatch")]
+    public float timeLimit; // Time limit for the game
+    float stopwatchTime; // Current time elapsed since the start of the stopwatch started
+    public TextMeshProUGUI stopwatchDisplay; // Stopwatch display
+
+
     public bool isGameOver = false; // Flag to check if the game is over
 
     void Awake()
@@ -69,6 +85,7 @@ public class GameManager : MonoBehaviour
                 if(!isGameOver)
                 {
                     isGameOver = true;
+                    Time.timeScale = 0f; // Pause the game
                     Debug.Log("Game Over");
                     DisplayResults(); // Display the results
                 }
@@ -134,6 +151,7 @@ public class GameManager : MonoBehaviour
     {
         // Disable all screens
         pauseScreen.SetActive(false);
+        resultsScreen.SetActive(false);
     }
     public void GameOver()
     {
@@ -143,7 +161,68 @@ public class GameManager : MonoBehaviour
 
     void DisplayResults()
     {
+        resultsScreen.SetActive(true); // Show the results screen
+    }
 
+    public void AssignChosenCharacterUI(CharacterScriptableObject chosencharacterdata)
+    {
+        // Assign the chosen character's image and name to the UI elements
+        chosenCharacterImage.sprite = chosencharacterdata.Icon;
+        chosenCharacterName.text = chosencharacterdata.Name;
+    }
+
+    public void AssignLevelReachedUI(int levelReached)
+    {
+        // Assign the level reached to the UI element
+        levelReachedDisplay.text = levelReached.ToString();
+    }
+
+    public void AssignChosenWeaponsAndPassivItemsUI(List<Image> chosenWeaponsData, List<Image> chosenPassiveItemsData)
+    {
+        // Assign the chosen weapons and passive items to the UI elements
+        if (chosenWeaponsData.Count != chosenWeaponsUI.Count || chosenPassiveItemsData.Count != chosenPassivItemsUI.Count)
+        {
+            Debug.LogWarning("Weapons UI and Weapons Data do not match in size");
+            return;
+        }
+
+        // Assign chosen weapons data to chosenWeaponsUI
+        for (int i = 0; i < chosenWeaponsUI.Count; i++)
+        {
+            // Check that the sprite of the corresponding UI element is not null
+            if (chosenWeaponsData[i].sprite)
+            {
+                // Enable the cprresponding UI element in chosenWeaponsUI and set its sprite to the sprite of the corresponding UI element in chosenWeaponsData
+                chosenWeaponsUI[i].enabled = true;
+                chosenWeaponsUI[i].sprite = chosenWeaponsData[i].sprite;
+            }
+            else
+            {
+                // Disable the UI element if no sprite is assigned
+                chosenWeaponsUI[i].enabled = false; 
+            }
+        }
+
+        for (int i = 0; i < chosenPassivItemsUI.Count; i++)
+        {
+            // Check that the sprite of the corresponding UI element is not null
+            if (chosenPassiveItemsData[i].sprite)
+            {
+                // Enable the cprresponding UI element in chosenPassivItemsUI and set its sprite to the sprite of the corresponding UI element in chosenPassiveItemsData
+                chosenPassivItemsUI[i].enabled = true;
+                chosenPassivItemsUI[i].sprite = chosenPassiveItemsData[i].sprite;
+            }
+            else
+            {
+                // Disable the UI element if no sprite is assigned
+                chosenPassivItemsUI[i].enabled = false; 
+            }
+        }
+    }
+
+    void UpdateStopwatch()
+    {
+        stopwatchTime += Time.deltaTime; // Increment the stopwatch time
     }
 
 }

@@ -18,6 +18,11 @@ public class EnemyStats : MonoBehaviour
  
     void Awake()
     {
+        if (enemyData == null)
+        {
+            Debug.LogError("EnemyData is not assigned on " + gameObject.name);
+            return;
+        }
         currentMoveSpeed = enemyData.MoveSpeed;
         currentHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
@@ -25,7 +30,15 @@ public class EnemyStats : MonoBehaviour
 
     void Start()
     {
-        player = FindAnyObjectByType<PlayerStats>().transform;
+        PlayerStats foundPlayer = FindAnyObjectByType<PlayerStats>();
+        if (foundPlayer != null)
+        {
+            player = foundPlayer.transform;
+        }
+        else
+        {
+            Debug.LogError("PlayerStats not found in the scene!");
+        }
     }
 
     void Update()
@@ -53,23 +66,36 @@ public class EnemyStats : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D col)
     {
-        if(col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player"))
         {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
-            player.TakeDamage(currentDamage);
+            if (player != null)
+            {
+                player.TakeDamage(currentDamage);
+            }
         }
     }
 
     private void OnDestroy()
     {
         EnemySpawner es = FindFirstObjectByType<EnemySpawner>();
+    if (es != null)
+    {
         es.OnEnemyKilled();
+    }
 
     }
 
     void ReturnEnemy()
     {
-        EnemySpawner es = FindAnyObjectByType<EnemySpawner>();
-        transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
+    EnemySpawner es = FindAnyObjectByType<EnemySpawner>();
+
+    if (es == null || es.relativeSpawnPoints == null || es.relativeSpawnPoints.Count == 0)
+    {
+        Debug.LogError("EnemySpawner or relativeSpawnPoints is missing!");
+        return;
     }
+
+    transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
+}
 }

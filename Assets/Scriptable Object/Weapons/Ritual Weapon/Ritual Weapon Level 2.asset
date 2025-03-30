@@ -15,10 +15,10 @@ MonoBehaviour:
   prefab: {fileID: 2243604368539106073, guid: deb5d336570f9b04087b089818904c23, type: 3}
   damage: 5
   speed: 0
-  cooldownDuration: 2.5
+  cooldownDuration: 2
   pierce: 0
   level: 2
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 3189634322237945269, guid: 8e18ddbec08eba14486b9bb5b839f554, type: 3}
   name: Ritual Level 2
-  description: Cooldown reduced by 0.5s
+  description: Cooldown reduced by 1s
   icon: {fileID: 2081294769, guid: 6f54a7fbd2c0f8b418b8d809440916b4, type: 3}

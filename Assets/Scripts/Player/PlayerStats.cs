@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -147,6 +149,10 @@ public class PlayerStats : MonoBehaviour
 
     public List<LevelRange> levelRange;
 
+    [Header("UI")]
+    public Image healthBar;
+    public Image expBar;
+    public TextMeshProUGUI levelText;
 
     InventoryManager inventory;
     public int weaponIndex;
@@ -194,6 +200,9 @@ public class PlayerStats : MonoBehaviour
             GameManager.instance.currentMagnetDisplay.text = "Magnet: " + CurrentMagnet;
 
             GameManager.instance.AssignChosenCharacterUI(characterData);
+            UpdateHealthBar();
+            UpdateExpBar();
+            UpdateLevelText();
     }
 
     void Update()
@@ -214,6 +223,7 @@ public class PlayerStats : MonoBehaviour
     {
         experience += Amount;
         LevelUpChecker();
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -234,9 +244,23 @@ public class PlayerStats : MonoBehaviour
             }
             experienceCap += experienceCapIncrease;
 
+            UpdateLevelText();
+
             GameManager.instance.StartLevelUp(); // Start the level up process
                 
         }
+    }
+
+    void UpdateExpBar()
+    {
+        // Update exp bar fill amount
+        expBar.fillAmount = (float)experience /experienceCap;
+    }
+
+    void UpdateLevelText()
+    {
+        // Update level text
+        levelText.text = "LV" + level.ToString();
     }
 
     public void TakeDamage(float dmg)
@@ -253,9 +277,17 @@ public class PlayerStats : MonoBehaviour
             {
                 Kill();
             }
+
+            UpdateHealthBar();
         }
        
         
+    }
+
+    void UpdateHealthBar()
+    {
+        // Update the health bar
+        healthBar.fillAmount = currentHealth /characterData.MaxHealth;
     }
 
     public void Kill()
@@ -281,6 +313,7 @@ public class PlayerStats : MonoBehaviour
             {
                 CurrentHealth = characterData.MaxHealth;
             }
+            UpdateHealthBar();
         }
         
     }
@@ -297,6 +330,7 @@ public class PlayerStats : MonoBehaviour
             {
                 CurrentHealth = characterData.MaxHealth;
             }
+            UpdateHealthBar();
         }
     }
 

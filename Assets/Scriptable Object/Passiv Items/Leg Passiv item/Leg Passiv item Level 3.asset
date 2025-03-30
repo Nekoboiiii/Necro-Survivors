@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66e8bb3c8b00ce549982efd22b286fb3, type: 3}
-  m_Name: Spirit Passiv Item Level 2
+  m_Name: Leg Passiv item Level 3
   m_EditorClassIdentifier: 
-  multipler: 20
-  level: 2
-  nextLevelPrefab: {fileID: 6665535043360874166, guid: 6b489b3da195d86499dbc5fafee2520e, type: 3}
-  name: Spirit Level 2
-  description: Increaces Might by 20
-  icon: {fileID: 21300000, guid: d45cd5a74cdc0874cba0cfccb6becf8f, type: 3}
+  multipler: 30
+  level: 3
+  nextLevelPrefab: {fileID: 0}
+  name: Leg Level 3
+  description: Increaces Movement Speed by 30%
+  icon: {fileID: 21300000, guid: e01a5db6191113041acda069fac47d67, type: 3}

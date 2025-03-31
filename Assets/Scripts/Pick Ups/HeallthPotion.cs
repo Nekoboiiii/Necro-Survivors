@@ -1,10 +1,19 @@
 using UnityEngine;
 
-public class HeallthPotion : Pickup, ICollectible
+public class HeallthPotion : Pickup
 {
     public int healthToRestore;
-    public void Collect()
+    public override void Collect()
     {
+        if(hasBeenCollected)
+        {
+            return;
+        }
+        else
+        {
+            base.Collect();
+        }
+        
         PlayerStats player = FindFirstObjectByType<PlayerStats>();
         player.RestoreHealth(healthToRestore);
     }

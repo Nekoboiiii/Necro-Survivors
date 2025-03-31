@@ -158,12 +158,6 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passivItemIndex;
 
-    [Header("Test Items/Weapons")]
-    public GameObject secondWeaponTest;
-    public GameObject firstPassivItemTest;
-    public GameObject secondPassivItemTest;
-
-
     void Awake()
     {
         characterData = CharacterSelector.GetData();
@@ -181,9 +175,6 @@ public class PlayerStats : MonoBehaviour
 
         //Spawn the starting Weapon
         SpawnWeapon(characterData.StartingWeapon);
-        //SpawnWeapon(secondWeaponTest);
-        //SpawnPassivItem(firstPassivItemTest);
-        SpawnPassivItem(secondPassivItemTest);
     }
 
     void Start()

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a457cfd9694d1c641b75c7c0213ff4e0, type: 3}
+  m_Name: Skull + Leg
+  m_EditorClassIdentifier: 
+  baseWeaponData: {fileID: 11400000, guid: c6e97b1a8cfc26a4b88015a1692cc0b9, type: 2}
+  catalystPassiveItenData: {fileID: 11400000, guid: 7f8763d0efa3c6d4eb7cf70c2ce9905f, type: 2}
+  evolvedWeaponData: {fileID: 11400000, guid: d76776cdc72ee434a8d06d6f7c975019, type: 2}
+  evolvedWeapon: {fileID: 3597227473535392419, guid: 82ab5eef4cc0a784485a6a22c0d063a5, type: 3}

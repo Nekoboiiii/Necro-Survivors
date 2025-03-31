@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 411770059394555998}
   - component: {fileID: 1885164625791791589}
   m_Layer: 0
-  m_Name: Skull Weapon Level 2
+  m_Name: Evolved Skull Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 251717615
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 46c0ede1eb850274980791914811585c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6be8a3f78f23a554d94abc7145a28305, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583d2d6a2cc3bf442a3cbcced025852e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: c6e97b1a8cfc26a4b88015a1692cc0b9, type: 2}
+  weaponData: {fileID: 11400000, guid: d76776cdc72ee434a8d06d6f7c975019, type: 2}
   destroyAfterSeconds: 3
 --- !u!58 &411770059394555998
 CircleCollider2D:

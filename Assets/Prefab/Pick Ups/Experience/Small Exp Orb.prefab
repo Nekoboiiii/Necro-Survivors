@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1232809042794278105}
   - component: {fileID: 3667957987539726639}
   - component: {fileID: -3787444090545151982}
-  - component: {fileID: -1422353316528492110}
   - component: {fileID: -2040939387944882739}
+  - component: {fileID: -1422353316528492110}
+  - component: {fileID: -6778085311937641614}
   m_Layer: 0
   m_Name: Small Exp Orb
   m_TagString: Untagged
@@ -126,19 +127,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
---- !u!114 &-1422353316528492110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4612728000208381952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b578aee7ff301f4aac636991a608c71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  experienceGranted: 100
 --- !u!50 &-2040939387944882739
 Rigidbody2D:
   serializedVersion: 5
@@ -166,3 +154,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-1422353316528492110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612728000208381952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b578aee7ff301f4aac636991a608c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceGranted: 100
+--- !u!114 &-6778085311937641614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612728000208381952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d5237d01e11f94ab1f54f2c63de336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 3
+  magnitude: 0.1
+  direction: {x: 0, y: 1, z: 0}

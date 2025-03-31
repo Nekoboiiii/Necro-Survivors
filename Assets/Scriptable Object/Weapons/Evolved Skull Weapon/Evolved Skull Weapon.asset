@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f90443031c74a14a92c654a42145a86, type: 3}
-  m_Name: Skull Weapon Level 3
+  m_Name: Evolved Skull Weapon
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6651525307632057075, guid: 4cbce96206bfaf941910726ac88fafb9, type: 3}
-  damage: 10
+  prefab: {fileID: 6651525307632057075, guid: 529bae06a30d01f4ab950254b719ba53, type: 3}
+  damage: 15
   speed: 15
   cooldownDuration: 2
-  pierce: 1
-  level: 2
+  pierce: 2
+  level: 0
   nextLevelPrefab: {fileID: 0}
-  name: Skull Level 3
-  description: Cooldown reduced by 1s
-  icon: {fileID: -2739807658926110822, guid: 46c0ede1eb850274980791914811585c, type: 3}
+  name: Evolved Skull
+  description: 
+  icon: {fileID: 21300000, guid: 6be8a3f78f23a554d94abc7145a28305, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Skull Weapon Level 2
   m_EditorClassIdentifier: 
   prefab: {fileID: 6651525307632057075, guid: 0210d2bc7af94534ab615d57e0057c3f, type: 3}
-  damage: 5
+  damage: 10
   speed: 15
   cooldownDuration: 3
   pierce: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ritual Weapon Level 3
   m_EditorClassIdentifier: 
   prefab: {fileID: 2243604368539106073, guid: deb5d336570f9b04087b089818904c23, type: 3}
-  damage: 7
+  damage: 10
   speed: 0
   cooldownDuration: 2
   pierce: 0

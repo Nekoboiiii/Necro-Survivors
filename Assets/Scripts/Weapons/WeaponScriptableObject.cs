@@ -45,5 +45,7 @@ public class WeaponScriptableObject : ScriptableObject
     Sprite icon; // Not meant to be Modified in the Game [Only in the Editor]
     public Sprite Icon {get => icon; private set => icon = value; }
 
-
+    [SerializeField]
+    int evolvedUpgradeToRemove; // Not meant to be Modified in the Game [Only in the Editor]
+    public int EvolvedUpgradeToRemove {get => evolvedUpgradeToRemove; private set => evolvedUpgradeToRemove = value; }
 }

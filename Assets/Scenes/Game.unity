@@ -3042,6 +3042,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   prevouisState: 0
+  damageTextCanvas: {fileID: 789012501}
+  textFontSize: 20
+  textFont: {fileID: 11400000, guid: 736dd69bf1135d64db2a3eedbd44fb9b, type: 2}
+  referenceCamera: {fileID: 519420031}
   pauseScreen: {fileID: 1972145117}
   resultsScreen: {fileID: 856549013}
   levelUpScreen: {fileID: 1298003818}
@@ -4322,6 +4326,8 @@ MonoBehaviour:
   level: 1
   experienceCap: 0
   invincibilityDuration: 0.5
+  weaponIndex: 0
+  passivItemIndex: 0
   levelRange:
   - startLevel: 1
     endLevel: 3
@@ -4332,8 +4338,7 @@ MonoBehaviour:
   healthBar: {fileID: 1881888812}
   expBar: {fileID: 1061876456}
   levelText: {fileID: 1899044714}
-  weaponIndex: 0
-  passivItemIndex: 0
+  damageEffect: {fileID: 2602816115791909753, guid: 07fe7d8cde5c80344a4b471f416a9ac4, type: 3}
 --- !u!114 &560107321
 MonoBehaviour:
   m_ObjectHideFlags: 0

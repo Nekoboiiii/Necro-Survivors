@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,6 +22,12 @@ public class GameManager : MonoBehaviour
     public GameState currentState;
     // Store the previous state of the game
     public GameState prevouisState;
+
+    [Header("Damage Text Settings")]
+    public Canvas damageTextCanvas;
+    public float textFontSize = 20;
+    public TMP_FontAsset textFont;
+    public Camera referenceCamera;
 
     [Header("Screens")]
     public GameObject pauseScreen;
@@ -112,6 +120,70 @@ public class GameManager : MonoBehaviour
                 Debug.LogWarning("STATE DOES NOT EXIST");
                 break;
         }
+    }
+
+    IEnumerator GenerateFloatingTextCoroutine(string text, Transform target, float duration = 1f, float speed = 50f)
+    {
+        if (target == null) yield break; // Prevents errors if target is null
+
+        // Create the text object
+        GameObject textObj = new GameObject("Damage Floating Text");
+        RectTransform rect = textObj.AddComponent<RectTransform>();
+        TextMeshProUGUI tmPro = textObj.AddComponent<TextMeshProUGUI>();
+
+        tmPro.text = text;
+        tmPro.horizontalAlignment = HorizontalAlignmentOptions.Center;
+        tmPro.verticalAlignment = VerticalAlignmentOptions.Middle;
+        tmPro.fontSize = textFontSize;
+        if (textFont) tmPro.font = textFont;
+
+        // Set parent to the UI canvas
+        textObj.transform.SetParent(instance.damageTextCanvas.transform, false);
+
+        // Track the world position of the target
+        Vector3 worldPosition = target.position;
+        rect.position = referenceCamera.WorldToScreenPoint(worldPosition);
+
+        WaitForEndOfFrame w = new WaitForEndOfFrame();
+        float t = 0f;
+
+        while (t < duration)
+        {
+            yield return w;
+            t += Time.deltaTime;
+
+            // Check if the target or text object is destroyed
+            if (textObj == null || tmPro == null) yield break;
+
+            // Update position in world space
+            if (target != null)
+            {
+                worldPosition = target.position; // Keep following the target position
+            }
+            worldPosition.y += speed * Time.deltaTime; // Move the text upwards in world space
+            rect.position = referenceCamera.WorldToScreenPoint(worldPosition);
+
+            // Fade out the text smoothly
+            tmPro.color = new Color(tmPro.color.r, tmPro.color.g, tmPro.color.b, 1 - t / duration);
+        }
+
+        // Ensure it gets destroyed after the loop completes
+        if (textObj != null)
+        {
+            Destroy(textObj);
+        }
+    }
+
+
+    public static void GenerateFloatingText(string text, Transform target, float duration = 1f, float speed = 1f)
+    {
+        //If the canvas ist not set, end the function so it doesnt generate any floating text
+        if(!instance.damageTextCanvas) return;
+
+        // Find a camera that we can use to convert the world position to a screen position
+        if(!instance.referenceCamera) instance.referenceCamera = Camera.main;
+
+        instance.StartCoroutine(instance.GenerateFloatingTextCoroutine(text, target, duration, speed));
     }
 
     public void ChangeState(GameState newState)

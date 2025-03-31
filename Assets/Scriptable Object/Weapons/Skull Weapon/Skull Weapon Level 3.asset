@@ -21,4 +21,5 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 0}
   name: Skull Level 3
   description: Cooldown reduced by 1s
-  icon: {fileID: -2739807658926110822, guid: 46c0ede1eb850274980791914811585c, type: 3}
+  icon: {fileID: 21300000, guid: 46c0ede1eb850274980791914811585c, type: 3}
+  evolvedUpgradeToRemove: 0

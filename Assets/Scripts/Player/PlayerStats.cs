@@ -147,6 +147,9 @@ public class PlayerStats : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
 
+    public int weaponIndex;
+    public int passivItemIndex;
+
     public List<LevelRange> levelRange;
 
     [Header("UI")]
@@ -154,9 +157,10 @@ public class PlayerStats : MonoBehaviour
     public Image expBar;
     public TextMeshProUGUI levelText;
 
+    [Header("Visuals")]
+    public ParticleSystem damageEffect;
+
     InventoryManager inventory;
-    public int weaponIndex;
-    public int passivItemIndex;
 
     void Awake()
     {
@@ -260,6 +264,13 @@ public class PlayerStats : MonoBehaviour
         if(!isInvincible)
         {
             CurrentHealth -= dmg;
+
+            // If there ist a damage effect assigned, play it
+            if (damageEffect)
+            {
+                ParticleSystem instantiatedEffect = Instantiate(damageEffect, transform.position, Quaternion.identity);
+                instantiatedEffect.transform.SetParent(transform); // Make the particle system a child of the player
+            }
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;

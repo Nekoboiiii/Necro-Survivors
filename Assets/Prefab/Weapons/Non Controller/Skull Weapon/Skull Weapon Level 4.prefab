@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 411770059394555998}
   - component: {fileID: 1885164625791791589}
   m_Layer: 0
-  m_Name: Skull Weapon Level 3
+  m_Name: Skull Weapon Level 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583d2d6a2cc3bf442a3cbcced025852e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 634dec811a8ac244f9f256d65eb725ae, type: 2}
+  weaponData: {fileID: 11400000, guid: 65743ef93ec68e442853009cd0ab0c25, type: 2}
   destroyAfterSeconds: 3
 --- !u!58 &411770059394555998
 CircleCollider2D:

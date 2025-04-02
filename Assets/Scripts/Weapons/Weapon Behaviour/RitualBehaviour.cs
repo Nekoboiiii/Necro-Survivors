@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("Will be replaced by the new System")]
 public class RitualBehaviour : MeleeWeaponBehaviour
 {
     List<GameObject> markedEnemies;

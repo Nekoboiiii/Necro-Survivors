@@ -2,6 +2,8 @@ using UnityEngine;
 /// <summary>
 /// Base script of all melee behaviors
 /// </summary>
+
+[System.Obsolete("Will be replaced by the new System")]
 public class MeleeWeaponBehaviour : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;

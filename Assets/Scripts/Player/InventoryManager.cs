@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
+[System.Obsolete("Will be replaced by the new System")]
 public class InventoryManager : MonoBehaviour
 {
     public List<WeaponController> weaponSlots = new List<WeaponController>(6);
@@ -319,6 +320,7 @@ public class InventoryManager : MonoBehaviour
         }
         return possibleEvolutions;
     }
+    
     public void EvolveWeapon(WeaponEvolutionBlueprint evolution)
     {
         for (int weaponSlotIndex = 0; weaponSlotIndex < weaponSlots.Count; weaponSlotIndex++)

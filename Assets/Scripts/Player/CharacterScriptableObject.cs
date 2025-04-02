@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[System.Obsolete("Will be replaced by the new System")]
 [CreateAssetMenu(fileName = "CharacterScriptableObject", menuName = "Scriptable Objects/Character")]
 public class CharacterScriptableObject : ScriptableObject
 {

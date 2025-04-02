@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f90443031c74a14a92c654a42145a86, type: 3}
   m_Name: Skull Weapon Level 4
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6651525307632057075, guid: 4cbce96206bfaf941910726ac88fafb9, type: 3}
+  prefab: {fileID: 3597227473535392419, guid: 2e3f1de216b0746468f52bb45b725026, type: 3}
   damage: 10
   speed: 15
   cooldownDuration: 2

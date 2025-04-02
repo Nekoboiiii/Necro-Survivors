@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Obsolete("Will be replaced by the new System")]
 public class RitualController : WeaponController
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created

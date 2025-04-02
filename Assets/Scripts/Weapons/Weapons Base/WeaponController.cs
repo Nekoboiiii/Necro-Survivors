@@ -4,6 +4,8 @@ using UnityEngine.Timeline;
 /// <summary>
 /// Base script for all Weapon Controller
 /// </summary>
+
+[System.Obsolete("Will be replaced by the new System")]
 public class WeaponController : MonoBehaviour
 {
 

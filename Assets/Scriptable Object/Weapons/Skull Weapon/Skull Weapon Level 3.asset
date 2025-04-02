@@ -18,7 +18,7 @@ MonoBehaviour:
   cooldownDuration: 2
   pierce: 1
   level: 3
-  nextLevelPrefab: {fileID: 0}
+  nextLevelPrefab: {fileID: 3597227473535392419, guid: 4555f8429d89ec94088d6568c112bd10, type: 3}
   name: Skull Level 3
   description: Cooldown reduced by 1s
   icon: {fileID: 21300000, guid: 6be8a3f78f23a554d94abc7145a28305, type: 3}

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Obsolete("Will be replaced by the new System")]
 public class SkullBehaviour : ProjectileWeaponBehaviour
 {
 
